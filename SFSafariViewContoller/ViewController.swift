@@ -6,14 +6,21 @@
 //
 
 import UIKit
+import SafariServices
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func openCaptureApp(_ sender: Any) {
+        guard let myURL = URL(string: "Capture App Url") else{
+            return
+        }
+        
+        let safariVC = SFSafariViewController(url: myURL)
+        present(safariVC, animated: true, completion: nil)
+    }
 }
 
